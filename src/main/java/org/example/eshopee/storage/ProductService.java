@@ -1,9 +1,10 @@
-package am.itspace.storage;
+package org.example.eshopee.storage;
 
-import am.itspace.db.DBConnectionProvider;
-import am.itspace.model.Category;
-import am.itspace.model.Product;
 
+
+import org.example.eshopee.db.DBConnectionProvider;
+import org.example.eshopee.model.Category;
+import org.example.eshopee.model.Product;
 
 import java.sql.*;
 import java.util.ArrayList;

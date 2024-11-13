@@ -8,9 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Title</title>
   </head>
   <body>
-  $END$
+  <h1>add category</h1>
+
+  <form action="/addCategory" method="post">
+    Name: <input type="text" name="name">
+    <br>
+    <input type="submit" value="add">
+  </form>
   </body>
 </html>

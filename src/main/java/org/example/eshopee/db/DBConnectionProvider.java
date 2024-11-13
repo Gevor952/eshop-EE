@@ -1,4 +1,4 @@
-package am.itspace.db;
+package org.example.eshopee.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,6 @@ import java.sql.SQLException;
 public class DBConnectionProvider {
 
     private static final DBConnectionProvider dbConnectionProvider;
-
 
     static {
         dbConnectionProvider = new DBConnectionProvider();
@@ -18,8 +17,13 @@ public class DBConnectionProvider {
     private static final String DB_USER_NAME = "root";
     private static final String DB_PASSWORD = "root";
 
-
     private DBConnectionProvider() {
+        try {
+            // Load the MySQL driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static DBConnectionProvider getInstance() {

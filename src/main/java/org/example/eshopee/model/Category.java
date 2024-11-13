@@ -1,4 +1,4 @@
-package am.itspace.model;
+package org.example.eshopee.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
