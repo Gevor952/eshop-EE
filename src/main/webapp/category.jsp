@@ -10,23 +10,37 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="style/style.css">
+
 </head>
 <body>
-<h1>Category</h1>  <a href="/addCategory">add</a>
-<table border="1">
-    <tr>
-        <th>id</th>
-        <th>name</th>
-    </tr>
+<nav class="manu"></nav>
+<div class="main_div">
 
-    <% List<Category> categorys = (List<Category>) request.getAttribute("categories");%>
-    <% for (Category category : categorys) { %>
-    <tr>
-        <td><%= category.getId()%></td>
-        <td> <%= category.getName()%></td>
-    </tr>
-    <%}%>
-</table>
+    <div class="boot">
+        <h1>Category</h1>
+        <a href="/index.jsp" class="a_boot" id="a_b_2"><p>home</p></a>
+        <a href="/addCategory" class="a_boot" ><p>add category</p></a>
 
+    </div>
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>action</th>
+        </tr>
+
+        <% List<Category> categorys = (List<Category>) request.getAttribute("categories");%>
+        <% for (Category category : categorys) { %>
+        <tr>
+            <td><%= category.getId()%></td>
+            <td> <%= category.getName()%></td>
+            <td><a href="/deleteCategory?id=<%= category.getId()%>" class="a_boot"><p>delete</p></a> <a href="/editCategory?id=<%= category.getId()%>" class="a_boot"><p>edit</p></a></td>
+        </tr>
+        <%}%>
+    </table>
+
+</div>
 </body>
 </html>

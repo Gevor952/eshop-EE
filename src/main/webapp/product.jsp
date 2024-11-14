@@ -10,24 +10,34 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="style/style.css">
+
 </head>
 <body>
-<h1>Product</h1>
-<a href="/addProduct">add</a>
-<% List<Product> products = (List<Product>) request.getAttribute("products");%>
+<nav class="manu"></nav>
 
-<table border="1">
-    <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>description</th>
-        <th>prise</th>
-        <th>quantity</th>
-        <th>category</th>
-    </tr>
+<div class="main_div">
+
+    <div class="boot">
+        <h1>Product</h1>
+        <a href="index.jsp" class="a_boot" id="a_b_3"><p>home</p></a>
+        <a href="/addProduct" class="a_boot"><p>add</p></a>
+    </div>
+
+    <table>
+        <% List<Product> products = (List<Product>) request.getAttribute("products");%>
+
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>description</th>
+            <th>prise</th>
+            <th>quantity</th>
+            <th>category</th>
+        </tr>
 
 
-    <%for (Product product : products){ %>
+        <%for (Product product : products){ %>
         <tr>
             <td> <%= product.getId()%></td>
             <td> <%= product.getName()%></td>
@@ -39,10 +49,11 @@
         </tr>
 
 
-    <%}%>
+        <%}%>
 
 
-</table>
+    </table>
 
+</div>
 </body>
 </html>
